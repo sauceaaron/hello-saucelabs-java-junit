@@ -1,6 +1,8 @@
 target/
 
 gradle/
+.gralde/
+
 build/
 
 .idea/
