@@ -10,6 +10,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Map;
+import java.util.logging.Logger;
 
 public abstract class SauceTestBase
 {
@@ -20,11 +21,25 @@ public abstract class SauceTestBase
 
     protected URL SauceUrl;
     protected RemoteWebDriver driver;
+    Logger log;
+
+    public SauceTestBase()
+    {
+        log = Logger.getLogger(this.getClass().getSimpleName());
+        log.info("Starting logger");
+    }
 
     @Before
     public void acquireWebDriverInstance() throws MalformedURLException
     {
+        log.info("acquiring WebDRiver instance");
         driver = new RemoteWebDriver(getSauceUrl(), getDesiredCapabilities());
+        log.info(driver.getCapabilities().getPlatform().name());
+        log.info(String.valueOf(driver.getCapabilities().getPlatform().toString());
+        log.info(String.valueOf(driver.getCapabilities().getPlatform().toString()));
+        log.info(driver.getCapabilities().getPlatform().getPartOfOsName().toString());
+        log.info(driver.getCapabilities().getBrowserName());
+        log.info(driver.getCapabilities().getVersion());
     }
 
     @After
