@@ -13,7 +13,7 @@ import java.util.Map;
 import static junit.framework.TestCase.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class HelloSauceLabs
+public class SetCapabilities
 {
     RemoteWebDriver driver;
 
