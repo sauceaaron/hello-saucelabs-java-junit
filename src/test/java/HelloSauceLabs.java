@@ -8,6 +8,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Map;
 
 import static junit.framework.TestCase.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -56,11 +57,14 @@ public class HelloSauceLabs
     public URL getSauceConnectUrl() throws MalformedURLException
     {
         String SAUCE_USERNAME = System.getenv("SAUCE_USERNAME");
-        String SAUCE_ACESS_KEY = System.getenv("SAUCE_ACCESS_KEY");
+        String SAUCE_ACCESS_KEY = System.getenv("SAUCE_ACCESS_KEY");
 
-        String sauceLabsUrlString = String.format("http://%s:%s@ondemand.saucelabs.com:80/wd/hub", SAUCE_USERNAME, SAUCE_ACESS_KEY);
+        System.out.println("SAUCE_USERNAME: " + SAUCE_USERNAME);
+        System.out.println("SAUCE_ACCESS_KEY: " + SAUCE_ACCESS_KEY);
+
+        String sauceLabsUrlString = String.format("http://%s:%s@ondemand.saucelabs.com:80/wd/hub", SAUCE_USERNAME, SAUCE_ACCESS_KEY);
         URL sauceLabsUrl = new URL(sauceLabsUrlString);
-
+        System.out.println("sauceLabsURL: " + sauceLabsUrl);
         return sauceLabsUrl;
     }
 
