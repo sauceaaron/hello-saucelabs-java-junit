@@ -57,16 +57,6 @@ public abstract class SauceTestBase
         String SAUCE_USERNAME = System.getenv("SAUCE_USERNAME");
         String SAUCE_ACCESS_KEY = System.getenv("SAUCE_ACCESS_KEY");
 
-        String SELENIUM_HOST = System.getenv("SELENIUM_HOST");
-        String SELENIUM_PORT = System.getenv("SELENIUM_PORT");
-        String SELENIUM_URL = System.getenv("SELENIUM_URL");
-
-        String SELENIUM_STARTING_URL = System.getenv("SELENIUM_STARTING_URL");
-
-        System.out.println("SELENIUM_HOST: " + SELENIUM_HOST);
-        System.out.println("SELENIUM_PORT: " + SELENIUM_PORT);
-        System.out.println("SELENIUM_URL: " + SELENIUM_URL);
-        System.out.println("SELENIUM_STARTING_URL: " + SELENIUM_STARTING_URL);
 
         System.out.println("SAUCE_USERNAME: " + SAUCE_USERNAME);
         System.out.println("SAUCE_ACCESS_KEY: " + SAUCE_ACCESS_KEY);

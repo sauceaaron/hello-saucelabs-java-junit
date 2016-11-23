@@ -15,5 +15,16 @@ public class WithCapabilitiesFromSauceOnDemand extends SauceTestBase
         System.out.println("got title: " + title);
 
         assertEquals(SauceLabs.HomePage.Expected.title, title);
+
+
+        String SELENIUM_HOST = System.getenv("SELENIUM_HOST");
+        String SELENIUM_PORT = System.getenv("SELENIUM_PORT");
+        String SELENIUM_URL = System.getenv("SELENIUM_URL");
+        String SELENIUM_STARTING_URL = System.getenv("SELENIUM_STARTING_URL");
+
+        System.out.println("SELENIUM_HOST: " + SELENIUM_HOST);
+        System.out.println("SELENIUM_PORT: " + SELENIUM_PORT);
+        System.out.println("SELENIUM_URL: " + SELENIUM_URL);
+        System.out.println("SELENIUM_STARTING_URL: " + SELENIUM_STARTING_URL);
     }
 }
