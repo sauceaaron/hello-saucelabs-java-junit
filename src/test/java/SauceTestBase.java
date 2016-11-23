@@ -57,13 +57,23 @@ public abstract class SauceTestBase
         String SAUCE_USERNAME = System.getenv("SAUCE_USERNAME");
         String SAUCE_ACCESS_KEY = System.getenv("SAUCE_ACCESS_KEY");
 
+        String SELENIUM_HOST = System.getenv("SELENIUM_HOST");
+        String SELENIUM_PORT = System.getenv("SELENIUM_PORT");
+        String SELENIUM_URL = System.getenv("SELENIUM_URL");
+
+        String SELENIUM_STARTING_URL = System.getenv("SELENIUM_STARTING_URL");
+
+        System.out.println("SELENIUM_HOST: " + SELENIUM_HOST);
+        System.out.println("SELENIUM_PORT: " + SELENIUM_PORT);
+        System.out.println("SELENIUM_URL: " + SELENIUM_URL);
+        System.out.println("SELENIUM_STARTING_URL: " + SELENIUM_STARTING_URL);
+
         System.out.println("SAUCE_USERNAME: " + SAUCE_USERNAME);
         System.out.println("SAUCE_ACCESS_KEY: " + SAUCE_ACCESS_KEY);
 
         String SauceUrlString = SauceUrlTemplate
                 .replace("SAUCE_USERNAME", SAUCE_USERNAME)
                 .replace("SAUCE_ACCESS_KEY", SAUCE_ACCESS_KEY);
-        System.out.println("SauceUrlString: " + SauceUrlString);
 
         URL SauceUrl = new URL(SauceUrlString);
         System.out.println("SauceUrl: " + SauceUrl);
@@ -80,11 +90,14 @@ public abstract class SauceTestBase
         String SELENIUM_PLATFORM = System.getenv("SELENIUM_PLATFORM");
         String SELENIUM_DRIVER = System.getenv("SELENIUM_DRIVER");
 
+
+
         System.out.println("SAUCE_ONDEMAND_BROWSERS: " + SAUCE_ONDEMAND_BROWSERS);
         System.out.println("SELENIUM_DRIVER: " + SELENIUM_DRIVER);
         System.out.println("SELENIUM_PLATFORM: " + SELENIUM_PLATFORM);
         System.out.println("SELENIUM_BROWSER: " + SELENIUM_BROWSER);
         System.out.println("SELENIUM_VERSION: " + SELENIUM_VERSION);
+
 
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
 
