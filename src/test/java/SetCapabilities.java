@@ -1,5 +1,6 @@
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.Platform;
@@ -31,6 +32,7 @@ public class SetCapabilities
         compareCapabilities(desiredCapabilities, actualCapabilities);
     }
 
+    @Ignore
     @Test
     public void open_home_page() throws Exception
     {

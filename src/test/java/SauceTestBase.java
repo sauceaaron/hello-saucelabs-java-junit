@@ -1,6 +1,5 @@
 import org.junit.After;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.rules.TestName;
 import org.openqa.selenium.remote.CapabilityType;
@@ -9,8 +8,6 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Map;
-import java.util.logging.Logger;
 
 public abstract class SauceTestBase
 {
@@ -19,27 +16,25 @@ public abstract class SauceTestBase
     @Rule
     public TestName name= new TestName();
 
-    protected URL SauceUrl;
     protected RemoteWebDriver driver;
-    Logger log;
-
-    public SauceTestBase()
-    {
-        log = Logger.getLogger(this.getClass().getSimpleName());
-        log.info("Starting logger");
-    }
 
     @Before
     public void acquireWebDriverInstance() throws MalformedURLException
     {
-        log.info("acquiring WebDRiver instance");
+        System.out.println("acquiring WebDriver instance");
         driver = new RemoteWebDriver(getSauceUrl(), getDesiredCapabilities());
-        log.info(driver.getCapabilities().getPlatform().name());
-        log.info(String.valueOf(driver.getCapabilities().getPlatform().toString());
-        log.info(String.valueOf(driver.getCapabilities().getPlatform().toString()));
-        log.info(driver.getCapabilities().getPlatform().getPartOfOsName().toString());
-        log.info(driver.getCapabilities().getBrowserName());
-        log.info(driver.getCapabilities().getVersion());
+
+        System.out.println("platform name: " + driver.getCapabilities().getPlatform().name());
+        System.out.println("platform majorVersion: " + driver.getCapabilities().getPlatform().getMajorVersion());
+        System.out.println("platform minorVersion: " + driver.getCapabilities().getPlatform().getMinorVersion());
+
+        System.out.println("browserName: " + driver.getCapabilities().getBrowserName());
+        System.out.println("version: " + driver.getCapabilities().getVersion());
+
+        for (String part : driver.getCapabilities().getPlatform().getPartOfOsName())
+        {
+            System.out.println("part: " + part);
+        }
     }
 
     @After
