@@ -23,7 +23,17 @@ public abstract class SauceTestBase
     {
         System.out.println("acquiring WebDriver instance");
 
-        driver = new RemoteWebDriver(getSauceUrl(), getDesiredCapabilities());
+        DesiredCapabilities desiredCapabilities = getDesiredCapabilities();
+
+        String JOB_NAME = System.getenv("JOB_NAME");
+        String BUILD_NUMBER = System.getenv("BUILD_NUMBER");
+
+        System.out.println("JOB_NAME: " + JOB_NAME);
+        System.out.println("BUILD_NUMBER: " + BUILD_NUMBER);
+
+        desiredCapabilities.setCapability("build",  JOB_NAME + "__" + BUILD_NUMBER);
+
+        driver = new RemoteWebDriver(getSauceUrl(), desiredCapabilities);
 
         System.out.println("platform name: " + driver.getCapabilities().getPlatform().name());
         System.out.println("platform majorVersion: " + driver.getCapabilities().getPlatform().getMajorVersion());
@@ -36,6 +46,8 @@ public abstract class SauceTestBase
         {
             System.out.println("part: " + part);
         }
+
+
 
         System.out.println("=====");
         System.out.println("name: " + name.getMethodName());
