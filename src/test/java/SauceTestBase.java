@@ -22,6 +22,7 @@ public abstract class SauceTestBase
     public void acquireWebDriverInstance() throws MalformedURLException
     {
         System.out.println("acquiring WebDriver instance");
+
         driver = new RemoteWebDriver(getSauceUrl(), getDesiredCapabilities());
 
         System.out.println("platform name: " + driver.getCapabilities().getPlatform().name());
@@ -35,6 +36,11 @@ public abstract class SauceTestBase
         {
             System.out.println("part: " + part);
         }
+
+        System.out.println("=====");
+        System.out.println("name: " + name.getMethodName());
+        System.out.println("=====");
+
     }
 
     @After
@@ -44,6 +50,10 @@ public abstract class SauceTestBase
         {
             driver.quit();
             System.out.println("webdriver quit");
+
+            System.out.println("=====");
+            System.out.println("build: " + "A FAKE BUILD NUMBER");
+            System.out.println("=====");
         }
         else
         {
@@ -95,6 +105,8 @@ public abstract class SauceTestBase
         desiredCapabilities.setVersion(SELENIUM_VERSION);
         desiredCapabilities.setCapability(CapabilityType.PLATFORM, SELENIUM_PLATFORM);
 
+//        String TUNNEL_IDENTIFIER = System.getenv("TUNNEL_IDENTIFIER");
+//        desiredCapabilities.setCapability("tunnelIdentifier", TUNNEL_IDENTIFIER);
         return desiredCapabilities;
     }
 }

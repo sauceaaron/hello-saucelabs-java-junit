@@ -16,7 +16,6 @@ public class WithCapabilitiesFromSauceOnDemand extends SauceTestBase
 
         assertEquals(SauceLabs.HomePage.Expected.title, title);
 
-
         String SELENIUM_HOST = System.getenv("SELENIUM_HOST");
         String SELENIUM_PORT = System.getenv("SELENIUM_PORT");
         String SELENIUM_URL = System.getenv("SELENIUM_URL");
