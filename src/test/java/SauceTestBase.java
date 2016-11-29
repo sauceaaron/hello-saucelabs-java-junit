@@ -32,6 +32,7 @@ public abstract class SauceTestBase
         System.out.println("BUILD_NUMBER: " + BUILD_NUMBER);
 
         desiredCapabilities.setCapability("build",  JOB_NAME + "__" + BUILD_NUMBER);
+        desiredCapabilities.setCapability("name", name.getMethodName());
 
         driver = new RemoteWebDriver(getSauceUrl(), desiredCapabilities);
 
