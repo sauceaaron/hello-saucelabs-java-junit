@@ -194,15 +194,15 @@ public class NewTestBase
             desiredCapabilities.setVersion(SELENIUM_VERSION);
         }
 
-        if (BUILD_NAME != null)
-        {
-            desiredCapabilities.setCapability("build", BUILD_NAME);
-        }
-
-        if (TEST_NAME != null)
-        {
-            desiredCapabilities.setCapability("name", TEST_NAME);
-        }
+//        if (BUILD_NAME != null)
+//        {
+//            desiredCapabilities.setCapability("build", BUILD_NAME);
+//        }
+//
+//        if (TEST_NAME != null)
+//        {
+//            desiredCapabilities.setCapability("name", TEST_NAME);
+//        }
 
         return desiredCapabilities;
     }
