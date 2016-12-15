@@ -8,6 +8,8 @@ repositories {
 }
 
 dependencies {
+    compile group: 'com.saucelabs', name: 'saucerest', version: '1.0.35'
+
     compile group: 'org.seleniumhq.selenium', name: 'selenium-server', version: '3.0.1'
     compile group: 'org.seleniumhq.selenium', name: 'selenium-remote-driver', version: '3.0.1'
 

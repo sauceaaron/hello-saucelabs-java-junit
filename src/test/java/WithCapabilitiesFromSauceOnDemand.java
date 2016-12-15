@@ -1,9 +1,11 @@
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
 
 public class WithCapabilitiesFromSauceOnDemand extends SauceTestBase
 {
+    @Ignore
     @Test
     public void open_sauce_labs_home_page() throws Exception
     {
